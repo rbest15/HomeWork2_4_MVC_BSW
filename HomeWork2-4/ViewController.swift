@@ -1,20 +1,17 @@
-//
-//  ViewController.swift
-//  HomeWork2-4
-//
-//  Created by Roman Kuzmich on 08.04.2020.
-//  Copyright © 2020 Roman Kuzmich Home Dev. All rights reserved.
-//
-
 import UIKit
+import ReactiveKit
+import Bond
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var btwTabelView: UITableView!
+    let viewModel = BSWModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        viewModel.tableViewBind(tableView: btwTabelView)
+        viewModel.fetchCategories()
     }
-
-
+    
 }
 
